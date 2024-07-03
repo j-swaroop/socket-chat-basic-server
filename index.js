@@ -7,11 +7,7 @@ const { Server } = require("socket.io");
 app.use(cors());
 
 const server = http.createServer(app);
-const io = new Server(server, {
-  cors: {
-    origin: "https://socket-chat-basic-client.vercel.app/",
-  },
-});
+const io = new Server(server);
 
 io.on("connection", (socket) => {
   console.log(`User Connected: ${socket.id}`);
