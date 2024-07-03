@@ -29,7 +29,7 @@ io.on("connection", (socket) => {
     console.log(`User Disconnected: ${socket.id}`);
   });
 });
-
-server.listen(3001, () => {
+let port = process.env.PORT || 3000;
+server.listen(port, () => {
   console.log("Server running");
 });
